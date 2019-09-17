@@ -1,0 +1,11 @@
+{% if documents %}
+  <ul list>
+    {% include "chunks/list_document/entries.html" %}
+
+    
+  </ul>
+{% else %}
+  <h2 empty_state>
+    We couldn't find any {{ model | capitalize }}s. You should create some
+  </h2>
+{% endif %}

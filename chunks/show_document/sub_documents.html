@@ -1,0 +1,40 @@
+{% if subdocuments %}
+  <div sub_doc_cont >
+    <h3>Subdocuments</h3>
+    {% for submodel, docs in subdocuments %}
+      <h4 >
+        <a subdocument_title href="/{{submodel}}">
+          {{ submodel | capitalize }}
+        </a>
+      </h4>
+      <ul list>
+
+      {% for entry in docs %}
+        <li>
+
+          {% set url = "/" ~ submodel ~ "/" ~ entry.uuid %}
+          <!-- For some reason the variable where losing context here if they were to be sent
+          to another chunks but reasigning the variable stops this , doing this also helps to 
+        understand the context of the component-->        
+          {% set store= entry.store %}        
+          {% set uuid= entry.uuid %}        
+
+          {% if entry.name %}         
+            {% set name= entry.name %}        
+            
+            <!-- Fixed, added variables assignation above this  -->
+            {% include "chunks/show_document/sub_document_name.html" %}
+            {% include "chunks/show_document/sub_document_data.html" %}
+
+          {% else %}
+            <!-- Subdocument doesn't have a name -->
+            
+            <!-- Fixed, added variables assignation above this  -->
+            {% include "chunks/show_document/sub_document_data.html" %}
+          {% endif %}
+        </li>
+      {% endfor %}
+      </ul>
+    {% endfor %}
+  </div>
+{% endif %}
