@@ -2,9 +2,9 @@ inline-block
 text-black
 link__main
 font-bold
-bg-yellow
+bg-yellow-500
 rounded-full
 py-2
 px-4
-hover:bg-yellow-dark
+hover:bg-yellow-600
 hover:text-white

@@ -7,24 +7,20 @@
     <div justify_container>
       <div fields_container >
         <h3>Fields</h3>
-        <div field_group >          
+        <div field_group >
           <!-- Fields of the documents -->
           {% include "chunks/show_document/show_document_field.html" %}
-         
         </div>
       </div>
       <div >
 
-        
         {% include "chunks/show_document/show_document_body.html" %}
 
-          
         {% include "chunks/show_document/sub_documents.html" %}
 
-        
       </div>
       <div centered_container >
-        <a blue_button 
+        <a blue_button
           href="/?witness={{ id }}">Witness</a>
         <a yellow_button
           href="/{{model}}/{{id}}/edit">Edit</a>

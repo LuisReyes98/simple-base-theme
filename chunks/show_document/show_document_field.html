@@ -1,6 +1,6 @@
 {% for key, value in fields %}
   <!-- Field of the document -->
-  {% if key != "body" %}    
+  {% if key != "body" %}
     <div responsive_field_container >
       <label field_name for="{{key}}">
         {{ key | safe | capitalize }}:
@@ -8,6 +8,6 @@
       <label field_value for="{{key}}" id="{{key}}">
         {{ value | safe }}
       </label>
-    </div>    
+    </div>
   {% endif %}
 {% endfor %}
