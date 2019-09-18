@@ -1,2 +1,3 @@
 inline-block
 my-1
+text-2xl
