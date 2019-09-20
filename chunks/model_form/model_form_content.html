@@ -11,8 +11,24 @@
         {% include "chunks/model_form/fields.html" %}
         {% include "chunks/model_form/model_body.html" %}
         <div padding_centered >
+          {% if editing %}
+            <a blue_button href="/{{ model_name | safe}}/{{id | safe}}">
+              Show
+            </a>
+          {% else %}
+            <a blue_button href="/{{ model_name | safe}}/">
+              Go back
+            </a>
+          {% endif %}
           <button green_button
-            type="submit" >Create {{ model_name | safe }}</button>
+            type="submit" >
+              {% if editing %}
+                Save
+              {% else %}
+                Create
+              {% endif %}
+              {{ model_name | safe }}
+          </button>
         </div>
 
       </div>
