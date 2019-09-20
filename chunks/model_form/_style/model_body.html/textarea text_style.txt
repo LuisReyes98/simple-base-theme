@@ -10,3 +10,4 @@ focus:outline-none
 focus:bg-white
 focus:border-black
 focus:text-black
+w-11/12
